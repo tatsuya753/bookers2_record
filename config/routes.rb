@@ -12,6 +12,7 @@ end
 
   resources :users, only: [:index, :show, :edit, :update] do
   resource :relationships, only: [:create, :destroy]
+    get "search", to: "users#search"
   	get 'followings' => 'relationships#followings', as: 'followings'
   	get 'followers' => 'relationships#followers', as: 'followers'
   end
